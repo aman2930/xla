@@ -31,9 +31,9 @@ steps:
 substitutions:
     _DOCKER_BASE_IMAGE: 'debian:stretch'
     _CUDA: '0'
-    _PYTHON_VERSION: '3.9'
+    _PYTHON_VERSION: '3.7'
     _RELEASE_VERSION: 'nightly'  # or rX.Y
-    _IMAGE_NAME: 'nightly_3.9'
+    _IMAGE_NAME: 'nightly_3.7'
     _UPLOAD_SUBDIR: ''
     _TPU_VM: ''
 options:
