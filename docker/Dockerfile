@@ -4,6 +4,8 @@
 ARG base_image="debian:stretch"
 FROM "${base_image}"
 
+RUN echo "Hello World AMAN"
+
 ARG python_version="3.6"
 ARG cloud_build="false"
 ARG release_version="nightly"
@@ -41,7 +43,7 @@ RUN if [ "${cloud_build}" = true ]; then github_branch="${release_version}" && \
   if [ "${release_version}" = "nightly" ]; then github_branch="master"; fi && \
   cd /pytorch && \
   rm -rf xla && \
-  git clone -b "${github_branch}" --recursive https://github.com/pytorch/xla && \
+  git clone -b new_tf_092121 --recursive https://github.com/aman2930/xla && \
   cd / && \
   git clone -b "${github_branch}" --recursive https://github.com/pytorch-tpu/examples tpu-examples; fi
 
