@@ -6,7 +6,7 @@ FROM "${base_image}"
 
 RUN echo "Hello World AMAN"
 
-ARG python_version="3.6"
+ARG python_version="3.9"
 ARG cloud_build="false"
 ARG release_version="nightly"
 ARG cuda="0"
