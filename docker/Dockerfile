@@ -15,7 +15,7 @@ ARG cxx_abi="0"
 ARG tpuvm=""
 
 RUN apt-get update
-RUN apt-get install -y git sudo python-pip python3-pip
+RUN apt-get install -y git sudo python3-pip
 RUN git clone https://github.com/pytorch/pytorch
 
 # Disable CUDA for PyTorch
