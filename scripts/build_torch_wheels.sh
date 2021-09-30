@@ -118,17 +118,17 @@ function debian_version {
 function install_llvm_clang() {
   local DEBVER=$(debian_version)
   echo "amangu -->${DEBVER}"
-  if ! apt-get install -y -s clang-8 > /dev/null 2>&1 ; then
+  if ! apt-get install -y -s clang-9 > /dev/null 2>&1 ; then
     echo "amangu --> inside if loop"
-    maybe_append "deb http://apt.llvm.org/${DEBVER}/ llvm-toolchain-${DEBVER}-8 main" /etc/apt/sources.list
-    maybe_append "deb-src http://apt.llvm.org/${DEBVER}/ llvm-toolchain-${DEBVER}-8 main" /etc/apt/sources.list
+    maybe_append "deb http://apt.llvm.org/${DEBVER}/ llvm-toolchain-${DEBVER}-9 main" /etc/apt/sources.list
+    maybe_append "deb-src http://apt.llvm.org/${DEBVER}/ llvm-toolchain-${DEBVER}-9 main" /etc/apt/sources.list
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
     sudo apt-get update
   fi
 
-  sudo apt-get install -y clang-8 clang++-8
-  maybe_append 'export CC=clang-8 CXX=clang++-8' ~/.bashrc
-  export CC=clang-8 CXX=clang++-8
+  sudo apt-get install -y clang-9
+  maybe_append 'export CC=clang-9 CXX=clang++-8' ~/.bashrc
+  export CC=clang-9 CXX=clang++-9
 }
 
 function install_req_packages() {
