@@ -44,7 +44,6 @@ RUN if [ "${cloud_build}" = true ]; then github_branch="${release_version}" && \
   cd /pytorch && \
   rm -rf xla && \
   git clone -b new_tf_092121 --recursive https://github.com/aman2930/xla && \
-  sed -i 's/c++14/c++17/g' ./xla/third_party/tensorflow/.bazelrc && \
   cd / && \
   git clone -b "${github_branch}" --recursive https://github.com/pytorch-tpu/examples tpu-examples; fi
 
